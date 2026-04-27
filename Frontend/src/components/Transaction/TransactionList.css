@@ -1,0 +1,61 @@
+.txn-page-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding: var(--space-1);
+  background: var(--bg-glass);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-primary);
+  width: fit-content;
+}
+
+.txn-tab {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.txn-tab:hover {
+  color: var(--text-primary);
+}
+
+.txn-tab.active {
+  background: var(--primary-600);
+  color: white;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+/* Transaction form styling */
+.txn-form-card {
+  max-width: 520px;
+  padding: var(--space-8);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.txn-form-card h2 {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.txn-form-card p {
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-6);
+}
+
+.txn-form-card .form-group {
+  margin-bottom: var(--space-5);
+}
+
+/* Transaction history table extras */
+.txn-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+}

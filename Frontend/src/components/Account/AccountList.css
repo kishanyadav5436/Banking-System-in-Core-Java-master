@@ -1,0 +1,157 @@
+.account-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.account-list-header h1 {
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.account-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.account-card {
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.account-card:hover {
+  transform: translateY(-4px);
+}
+
+.account-card:hover::after {
+  opacity: 1;
+}
+
+.account-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.account-card-type {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--primary-400);
+}
+
+.account-card-type.current {
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--info-400);
+}
+
+.account-card-type.fixed {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning-400);
+}
+
+.account-card-no {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  font-family: 'Courier New', monospace;
+}
+
+.account-card-name {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.account-card-date {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-4);
+}
+
+.account-card-balance-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-primary);
+}
+
+.account-card-balance {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.account-card-balance-label {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  margin-bottom: 2px;
+}
+
+/* Create Account Form */
+.create-account-card {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.create-account-card h2 {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+  letter-spacing: -0.02em;
+}
+
+.select-field {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: var(--font-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.select-field:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.select-field option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .account-cards {
+    grid-template-columns: 1fr;
+  }
+}

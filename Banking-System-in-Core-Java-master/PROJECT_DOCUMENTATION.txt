@@ -1,0 +1,190 @@
+Banking System in Core Java - Project Documentation
+
+1. Project Overview
+-------------------
+This project is a desktop banking system built with Core Java Swing. It implements a simple bank account management application with a graphical user interface (GUI), including features for creating accounts, depositing money, withdrawing money, deleting customers, searching accounts, and viewing records.
+
+The application stores customer records in a local binary file named Bank.dat using Java DataOutputStream and DataInputStream. It also includes multiple user interface themes and menu-based navigation.
+
+2. Environment and Requirements
+-------------------------------
+- Java Development Kit (JDK) installed. Recommended version: JDK 8 or later.
+- A Windows command prompt or terminal.
+- The working folder is the source folder: Banking-System-in-Core-Java-master\Banking-System-in-Core-Java-master.
+- The application uses only standard Java libraries: java.awt.*, java.swing.*, java.io.*, java.text.*.
+
+3. Build and Run Commands
+-------------------------
+Open a command prompt and run the following commands:
+
+1. Change directory to the source folder:
+   cd "d:\Creativity\BANKING JAVAA\Banking-System-in-Core-Java-master\Banking-System-in-Core-Java-master"
+
+2. Compile all Java source files:
+   javac *.java
+
+3. Run the application:
+   java Splash
+
+If you want to run from the outer project folder, use this command:
+   cd "d:\Creativity\BANKING JAVAA\Banking-System-in-Core-Java-master\Banking-System-in-Core-Java-master"
+   java Splash
+
+4. Deploying the Application
+----------------------------
+This project does not include a build tool. To deploy it, distribute the compiled class files and the required assets:
+- All .class files generated after compilation
+- Bank.dat data file (if you want to preserve existing data)
+- Images folder with icons (Images/)
+- All .java source files if you want the code bundled with the app
+
+Optional: package into a JAR file
+1. Create a manifest file named manifest.txt with the line:
+   Main-Class: Splash
+
+2. Create the JAR:
+   jar cvfm BankSystem.jar manifest.txt *.class Images\*
+
+3. Run the JAR:
+   java -jar BankSystem.jar
+
+Note: If the application uses the Bank.dat file at runtime, place it in the same folder where you run the app so the app can read and write records correctly.
+
+5. How the Application Works
+-----------------------------
+The main program is `BankSystem.java`. It creates a main window with a menu bar and internal frames. The app uses a JDesktopPane to host multiple internal windows like accounts, deposit, withdraw, search, and view.
+
+The application uses the following functional files:
+
+- BankSystem.java
+  - Main application frame with menus: File, Edit, View, Options, Window, Help.
+  - Handles menu actions and opens internal windows.
+  - Uses `Bank.dat` to load and display existing records.
+  - Provides UI theme selection and window management.
+  - Contains binary data handling logic, status bar, toolbar, pop-up menu, and shortcuts.
+
+- NewAccount.java
+  - UI for creating a new bank account.
+  - Fields: account number, customer name, deposit date, initial deposit amount.
+  - Validates numeric input for account number and deposit amount.
+  - Writes a new record to Bank.dat if the account does not already exist.
+
+- DepositMoney.java
+  - UI for depositing money into an existing customer account.
+  - Looks up the account by number and displays current balance.
+  - Updates the stored balance after deposit.
+  - Uses the Bank.dat file to reload and rewrite records.
+
+- WithdrawMoney.java
+  - UI for withdrawing money from an existing account.
+  - Searches by account number and displays current balance.
+  - Prevents withdrawing more than the available balance.
+  - Updates Bank.dat records after a successful withdrawal.
+
+- DeleteCustomer.java
+  - UI for deleting a customer account record.
+  - Searches and removes a record from the Bank.dat binary file.
+  - Ensures user confirmation before deletion.
+
+- FindAccount.java
+  - UI to search for a specific account by account number.
+  - Displays account number, customer name, last transaction date, and balance.
+
+- FindName.java
+  - UI to search for a specific account by customer name.
+  - Displays matched account details.
+
+- FindAccountName.java
+  - Another search UI variant that can be used to search by name or account.
+
+- ViewCustomer.java
+  - Shows all customer records in a table.
+  - Loads every record from Bank.dat and formats it into rows.
+
+- ViewOne.java
+  - Displays one account at a time in a separate internal window.
+  - Useful for sequential browsing of records.
+
+- BankHelp.java
+  - Help window containing application instructions.
+  - Displays help contents and keyboard shortcuts.
+
+- Splash.java
+  - Splash screen shown when the application launches.
+  - Provides an introductory loading screen.
+
+- UISwitchListener.java
+  - Manages look-and-feel changes dynamically.
+  - Ensures the UI updates when theme or layout is changed.
+
+Theme and Style Files
+---------------------
+The project includes several theme and style classes that customize the app look:
+- AquaTheme.java
+- GrayTheme.java
+- GreenTheme.java
+- MilkyTheme.java
+- SandTheme.java
+- SolidTheme.java
+- PropertiesMetalTheme.java
+- MetalThemeMenu.java
+
+These classes create custom `MetalTheme` variants to change button colors, control backgrounds, and other Swing styles. The UI menu `Options -> Apply Theme` lets the user switch between available themes.
+
+6. Notes and Important Behavior
+-------------------------------
+- The application uses a fixed-size record array for up to 500 records.
+- `Bank.dat` is a binary file and must be read/written from the same folder where the app runs.
+- The app stores each record as 6 UTF strings: account number, name, month, day, year, balance.
+- If `Bank.dat` does not exist, the app creates it when saving the first record.
+- Some classes use direct user prompts via `JOptionPane` for validation and messages.
+
+7. Running from the Command Line (Windows)
+------------------------------------------
+1. Open Command Prompt.
+2. Change to the source directory:
+   cd "d:\Creativity\BANKING JAVAA\Banking-System-in-Core-Java-master\Banking-System-in-Core-Java-master"
+3. Compile source:
+   javac *.java
+4. Launch the app:
+   java BankSystem
+
+If you want to create a jar for distribution:
+   echo Main-Class: BankSystem > manifest.txt
+   jar cvfm BankSystem.jar manifest.txt *.class Images\*
+   java -jar BankSystem.jar
+
+8. Additional Tips
+------------------
+- Run `javac -version` to confirm the JDK is installed.
+- If `javac` is not found, install the JDK and add `JAVA_HOME` plus the Java `bin` folder to the PATH.
+- Keep `Bank.dat` in the same directory as the `.class` files to preserve customer data.
+- To reset the data, delete `Bank.dat` and restart the app.
+
+9. File-by-File Summary
+-----------------------
+BankSystem.java: main GUI launcher and menu manager.
+NewAccount.java: create and save a new bank account.
+DepositMoney.java: add funds to an account balance.
+WithdrawMoney.java: withdraw funds with balance checks.
+DeleteCustomer.java: remove an account from storage.
+FindAccount.java: search accounts by number.
+FindName.java: search accounts by customer name.
+FindAccountName.java: alternate search dialog.
+ViewCustomer.java: display all accounts in a table.
+ViewOne.java: browse accounts one record at a time.
+BankHelp.java: help content and shortcut instructions.
+Splash.java: splash screen shown at startup.
+UISwitchListener.java: manages theme switching.
+AquaTheme.java: custom Aqua Metal theme.
+GrayTheme.java: custom Gray Metal theme.
+GreenTheme.java: custom Green Metal theme.
+MilkyTheme.java: custom Milky Metal theme.
+SandTheme.java: custom Sand Metal theme.
+SolidTheme.java: custom Solid Metal theme.
+PropertiesMetalTheme.java: theme property helper.
+MetalThemeMenu.java: theme menu builder.
+Images/: icons used in the UI.
+Bank.dat: binary data file for saved customer records.
+
+This text file is intended to help you understand the full project structure, how to build and run it from the command line, and what each major source file does.
