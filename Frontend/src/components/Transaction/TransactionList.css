@@ -25,7 +25,7 @@
 .txn-tab.active {
   background: var(--primary-600);
   color: white;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 /* Transaction form styling */

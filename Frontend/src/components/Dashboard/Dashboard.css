@@ -47,23 +47,23 @@
 }
 
 .stat-card-icon.purple {
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--primary-400);
+  background: var(--primary-100);
+  color: var(--primary-700);
 }
 
 .stat-card-icon.green {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--accent-400);
+  background: #dcfce7;
+  color: var(--accent-600);
 }
 
 .stat-card-icon.blue {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--info-400);
+  background: #e0f2fe;
+  color: var(--info-500);
 }
 
 .stat-card-icon.orange {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--warning-400);
+  background: #fef3c7;
+  color: #d97706;
 }
 
 .stat-card-change {
@@ -75,11 +75,11 @@
 }
 
 .stat-card-change.up {
-  color: var(--accent-400);
+  color: var(--accent-600);
 }
 
 .stat-card-change.down {
-  color: var(--danger-400);
+  color: var(--danger-600);
 }
 
 .stat-card-value {
@@ -164,23 +164,23 @@
 }
 
 .quick-action-btn .qa-icon.deposit {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--accent-400);
+  background: #dcfce7;
+  color: var(--accent-600);
 }
 
 .quick-action-btn .qa-icon.withdraw {
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--danger-400);
+  background: #fee2e2;
+  color: var(--danger-600);
 }
 
 .quick-action-btn .qa-icon.transfer {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--info-400);
+  background: #e0f2fe;
+  color: var(--info-500);
 }
 
 .quick-action-btn .qa-icon.account {
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--primary-400);
+  background: var(--primary-100);
+  color: var(--primary-700);
 }
 
 /* Recent transactions section */
@@ -218,18 +218,18 @@
 }
 
 .recent-txn-icon.deposit {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--accent-400);
+  background: #dcfce7;
+  color: var(--accent-600);
 }
 
 .recent-txn-icon.withdraw {
-  background: rgba(239, 68, 68, 0.12);
-  color: var(--danger-400);
+  background: #fee2e2;
+  color: var(--danger-600);
 }
 
 .recent-txn-icon.transfer {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--info-400);
+  background: #e0f2fe;
+  color: var(--info-500);
 }
 
 .recent-txn-info {
@@ -255,11 +255,11 @@
 }
 
 .recent-txn-amount.credit {
-  color: var(--accent-400);
+  color: var(--accent-600);
 }
 
 .recent-txn-amount.debit {
-  color: var(--danger-400);
+  color: var(--danger-600);
 }
 
 @media (max-width: 1024px) {

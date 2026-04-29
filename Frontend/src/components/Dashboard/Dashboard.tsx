@@ -85,20 +85,20 @@ export default function Dashboard() {
           <h3>Monthly Overview</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={stats.monthlyData} barGap={4}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="month" tick={{ fill: '#9ca3af', fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} axisLine={false} tickLine={false}
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--border-primary)" />
+              <XAxis dataKey="month" tick={{ fill: 'var(--text-tertiary)', fontSize: 12 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: 'var(--text-tertiary)', fontSize: 12 }} axisLine={false} tickLine={false}
                 tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}K`} />
               <Tooltip
                 contentStyle={{
-                  background: '#1f2937', border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '12px', color: '#f9fafb', fontSize: '13px',
+                  background: 'var(--bg-card)', border: '1px solid var(--border-primary)',
+                  borderRadius: '12px', color: 'var(--text-primary)', fontSize: '13px',
                 }}
                 formatter={(value) => [formatCurrency(Number(value))]}
               />
-              <Legend wrapperStyle={{ fontSize: '12px', color: '#9ca3af' }} />
-              <Bar dataKey="deposits" fill="#6366f1" radius={[6, 6, 0, 0]} name="Deposits" />
-              <Bar dataKey="withdrawals" fill="#ef4444" radius={[6, 6, 0, 0]} name="Withdrawals" />
+              <Legend wrapperStyle={{ fontSize: '12px', color: 'var(--text-tertiary)' }} />
+              <Bar dataKey="deposits" fill="var(--primary-500)" radius={[6, 6, 0, 0]} name="Deposits" />
+              <Bar dataKey="withdrawals" fill="var(--danger-500)" radius={[6, 6, 0, 0]} name="Withdrawals" />
             </BarChart>
           </ResponsiveContainer>
         </div>

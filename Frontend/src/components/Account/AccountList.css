@@ -34,7 +34,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+  background: var(--primary-600);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
@@ -61,18 +61,18 @@
   letter-spacing: 0.08em;
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--primary-400);
+  background: var(--primary-100);
+  color: var(--primary-700);
 }
 
 .account-card-type.current {
-  background: rgba(14, 165, 233, 0.12);
-  color: var(--info-400);
+  background: #e0f2fe;
+  color: var(--info-600);
 }
 
 .account-card-type.fixed {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--warning-400);
+  background: #fef3c7;
+  color: #d97706;
 }
 
 .account-card-no {
@@ -142,7 +142,7 @@
 
 .select-field:focus {
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
 .select-field option {

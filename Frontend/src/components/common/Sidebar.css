@@ -25,15 +25,14 @@
 .sidebar-brand-icon {
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  border-radius: var(--radius-md);
+  background: var(--primary-700);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
   color: white;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .sidebar-brand-text {
@@ -88,8 +87,8 @@
 }
 
 .sidebar-link.active {
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--primary-400);
+  background: var(--primary-50);
+  color: var(--primary-700);
 }
 
 .sidebar-link.active::before {
@@ -132,7 +131,7 @@
   width: 34px;
   height: 34px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+  background: var(--primary-700);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,8 +170,8 @@
 }
 
 .sidebar-logout-btn:hover {
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--danger-400);
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--danger-600);
 }
 
 /* Mobile overlay */

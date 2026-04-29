@@ -10,8 +10,7 @@ export default function NotFoundPage() {
     }}>
       <div style={{
         fontSize: '6rem', fontWeight: 900, letterSpacing: '-0.04em',
-        background: 'linear-gradient(135deg, var(--primary-400), var(--accent-400))',
-        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+        color: 'var(--primary-700)',
         lineHeight: 1,
       }}>404</div>
       <h2 style={{ fontSize: 'var(--font-2xl)', marginTop: 'var(--space-4)', marginBottom: 'var(--space-2)' }}>
