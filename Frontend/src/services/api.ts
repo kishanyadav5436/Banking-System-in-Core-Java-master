@@ -6,7 +6,10 @@ import type { Account, Customer, Transaction, DashboardStats } from '../types';
 // ================================================================
 
 // Use the proxy defined in package.json or environment variable
-const API_URL = import.meta.env.VITE_API_URL || '/api';
+let API_URL = import.meta.env.VITE_API_URL || '/api';
+if (API_URL && API_URL.startsWith('http') && !API_URL.endsWith('/api')) {
+  API_URL = API_URL.replace(/\/$/, '') + '/api';
+}
 
 const api = axios.create({
   baseURL: API_URL,
